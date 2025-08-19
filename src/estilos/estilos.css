@@ -1,0 +1,32 @@
+.cuadro{
+    border: solid 1px rgb(160, 41, 150);
+    background-color: rgb(229, 194, 240);
+    box-shadow: 1px 1px 8px rgb(166, 120, 219);
+ }
+
+.cuadrog{
+    display: grid;
+    grid-template-columns: repeat(3,100px);
+    margin: 0 auto;
+    justify-content: center;
+    grid-template-rows: repeat(3,100px);   
+}
+.h1{
+    text-align: center;
+    text-shadow: 1px 1px 10px;
+    color: rgb(89, 58, 116);
+
+
+}
+
+
+.button {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: grid;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 10px 40px; 
+    border-radius: 20px; 
+    box-shadow: 1px 1px 15px;
+    background-color: rgb(238, 195, 227);
+}
