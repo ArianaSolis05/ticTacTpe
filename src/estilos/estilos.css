@@ -28,6 +28,21 @@ body{
     background-color:  rgb(222, 151, 243); 
  }
 
+ .buttonReiniciar{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: grid;
+    margin: 0 auto;
+    justify-content: center;
+    padding: 10px 40px; 
+    border-radius: 20px; 
+    box-shadow: 1px 1px 15px;
+    background-color: rgb(238, 195, 227);
+    font-weight: bolder;
+    margin-top: 5px;
+ }
+.contador{
+    margin-top: 5px;
+}
 .h1{
     text-align: center;
     text-shadow: 1px 1px 10px;
