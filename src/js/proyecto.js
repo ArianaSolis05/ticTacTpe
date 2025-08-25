@@ -8,9 +8,9 @@ const casilla6 = document.getElementById("casilla6")
 const casilla7 = document.getElementById("casilla7")
 const casilla8 = document.getElementById("casilla8")
 const reiniciar = document.getElementById("reiniciar")
+const btnContadores = document.getElementById("btnContadores")
 
-
-
+let alguieGana = false
 let movimientosTablero = 0
 let contadorX = localStorage.getItem("contadorX") || 0;
 let contadorO = localStorage.getItem("contadorO") || 0;
@@ -47,20 +47,20 @@ function movimientos() {
 }
 
 function aleatorio() {
-    movimientosTablero++
+    
     const posicionesVacias = arreglo.filter((casilla) => casilla.textContent == "");
     if (posicionesVacias.length > 0) {
         const posAleatoria = [Math.floor(Math.random() * posicionesVacias.length)]
         posicionesVacias[posAleatoria].textContent = "O"
+          movimientosTablero++
         validarGanador()
     }
 }
 movimientos()
 
 
-let alguieGana = false
 function validarGanador() {
-    console.log(movimientosTablero);
+   
     const posiblesGanes = [
         [0, 1, 2], [3, 4, 5], [6, 7, 8],// -> Estás son las filas
         [0, 3, 6], [1, 4, 7], [2, 5, 8], // -> Estás son las columnas 
@@ -70,32 +70,44 @@ function validarGanador() {
         const [posicion, posicion2, posicion3] = posiblesGanes[index]
         if (arreglo[posicion].textContent != "" && arreglo[posicion].textContent == arreglo[posicion2].textContent && arreglo[posicion].textContent == arreglo[posicion3].textContent) {
             alert("Hay un ganador")
+           
             if (arreglo[posicion].textContent === "X") {
                 contadorX++;
+                
                 victoriasX.textContent = contadorX
                 localStorage.setItem("contadorX", contadorX)
                 alguieGana = true
             } if (arreglo[posicion].textContent === "O") {
+                
                 contadorO++;
                 victoriasO.textContent = contadorO
                 localStorage.setItem("contadorO", contadorO)
                 alguieGana = true
             }
-            if (movimientosTablero >= 9 && !alguieGana) {
-                alert("EMPATE")
-                return true
-            }
-
+    
             return true
         }
     }
 
+      console.log(movimientosTablero);
+      console.log(alguieGana);
+      
+        
+          if (movimientosTablero == 9 && alguieGana == false) {
+                    alert("EMPATE")       
+        }  
 }
 
 function reiniciarF() {
     arreglo.forEach(casilla => casilla.textContent = "")
-
-
+     movimientosTablero = 0
+     alguieGana = false
+     
 }
 
 document.getElementById("reiniciar").addEventListener("click", reiniciarF)
+btnContadores.addEventListener("click",function(){
+    localStorage.clear()
+    victoriasO.textContent = 0
+    victoriasX.textContent = 0
+})

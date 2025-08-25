@@ -2,7 +2,6 @@ body{
     background: linear-gradient(0.25turn, #8ad9fc, #ebf8e1, hsl(315, 100%, 77%));
 }
 .cuadro{
-    border: solid 1px +rgb(185, 229, 235);
     background-color: rgb(229, 194, 240);
     box-shadow: 1px 1px 10px rgb(78, 20, 145);
     display: flex;
@@ -11,7 +10,6 @@ body{
  }
 .imgX{
     width: 100px;
-
 }
 .cuadrog{
     display: grid;
@@ -31,7 +29,6 @@ body{
  }
 
 .h1{
-
     text-align: center;
     text-shadow: 1px 1px 10px;
     color: rgb(89, 58, 116);
@@ -45,5 +42,17 @@ body{
     border-radius: 20px; 
     box-shadow: 1px 1px 15px;
     background-color: rgb(238, 195, 227);
+    font-weight: bolder;
 }
 
+.button:hover{
+    background-color:rgb(177, 101, 158) ;
+    color: rgb(48, 3, 66);
+}
+.contador{
+   text-align: center;
+  font-family: Helvetica, Arial, sans-serif;
+   text-shadow: 1px 1px 8px;
+   color: rgb(72, 16, 72);
+
+}
